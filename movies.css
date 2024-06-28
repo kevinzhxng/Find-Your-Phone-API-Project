@@ -13,6 +13,10 @@ GENERICS
 
 */
 
+html {
+  scroll-behavior: smooth;
+}
+
 li {
   list-style: none;
 }
@@ -20,6 +24,10 @@ li {
 a {
   text-decoration: none;
   color: black;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 nav {
@@ -65,7 +73,7 @@ HEADER
 
 */
 
-header {
+#movie__page {
   background-image: linear-gradient(
     #6ab8c4,
     #fa8c2b,
@@ -76,7 +84,7 @@ header {
     #fa8c2b,
     #fc4863
   );
-  height: calc(100vh - 100px);
+  height: 100%;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -88,19 +96,14 @@ header {
 }
 
 .header__row {
-  margin-top: 32px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-h2 {
-  font-size: 48px;
-}
-
 h1 {
-  font-size: 108px;
+  font-size: 48px;
   background: radial-gradient(circle, #2faabd, #df2742);
   background-clip: text;
   color: transparent;
@@ -110,15 +113,11 @@ h1 {
 
 @keyframes movie {
     0% {
-        background-position: 0% 0%;
-    }
-
-    50% {
         background-position: 100% 100%;
     }
 
     100% {
-        background-position: 0% 0%;
+        background-position: 300% 0%;
     }
 }
 
@@ -139,7 +138,15 @@ h1 {
     background-color: #c5e4e9;
     padding: 12px;
     font-size: 24px;
+    box-shadow: 0px 25px 20px -20px rgba(0, 0, 0, 0.45);
+    border: none;
 }
+
+.search__input:focus {
+    outline: none;
+    box-shadow: inset rgba(60, 70, 85, 0.5) 0px 0px 40px 0px,
+      rgba(0, 0, 0, 0.3) 0px 30px 100px -24px;
+  }
 
 .search__button {
     text-decoration-style: none;
@@ -161,10 +168,85 @@ h1 {
     filter: brightness(70%);
 }
 
-.header__img {
-    width: 100%;
-    max-width: 1050px;
-    margin-top: 56px;
+/*
+
+MOVIE LIST
+
+*/
+
+.movies__list {
+ flex-wrap: wrap;
+ display: flex;
+ width: 100%;
+ max-width: 1000px;
 }
 
+.movie {
+    width: 25%;
+}
+
+.movie-card__container {
+    width: 600px;
+}
+
+.movie__poster {
+    width: 80%;
+    margin: 24px 24px 0 24px;
+}
+
+h3 {
+    width: 100%;
+    padding: 0 24px 0 24px;
+}
+
+p {
+    width: 100%;
+    padding: 0 24px 0 24px;
+}
+
+
+
+/*
+
+FOOTER
+
+*/
+
+#footer {
+  background-image: linear-gradient(
+    #fc4863,
+    #6ab8c4
+  );
+}
+
+.footer__container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 48px 0;
+}
+
+.footer__img {
+  width: 100px;
+}
+
+.footer__list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__copyright {
+  font-size: 20px;
+  color: #c5e4e9;
+}
+
+.footer__github {
+  font-size: 32px;
+}
 
