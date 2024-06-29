@@ -1,5 +1,5 @@
 //https://www.omdbapi.com/?i=tt3896198&apikey=1e94ff26&s=naruto
-//
+//https://www.omdbapi.com/?i=tt0988824&apikey=1e94ff26&type
 
 const form = document.querySelector('form');
 const movieListEl = document.querySelector('.movies__list');

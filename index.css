@@ -255,3 +255,27 @@ FOOTER
 .footer__github {
   font-size: 32px;
 }
+
+
+/* TABLETS */
+@media (max-width: 768px) {
+
+  h1 {
+    text-align: center;
+    font-size: 90px;
+  }
+  h2 {
+    font-size: 32px;
+  }
+}
+
+
+/* PHONES */
+@media (max-width: 576px) {
+  h1 {
+    font-size: 64px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+}
