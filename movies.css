@@ -38,6 +38,10 @@ nav {
     cursor: pointer;
 }
 
+.click--not-allowed {
+    cursor: not-allowed;
+}
+
 /*
 
 NAV
@@ -168,6 +172,17 @@ h1 {
     filter: brightness(70%);
 }
 
+#filter {
+    padding: 8px;
+    margin-top: 24px;
+    background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+}
+
+
+
 /*
 
 MOVIE LIST
@@ -181,12 +196,17 @@ MOVIE LIST
  max-width: 1000px;
 }
 
+
 .movie {
     width: 25%;
 }
 
 .movie-card__container {
     width: 600px;
+}
+
+.movie--disappear {
+    visibility: hidden;
 }
 
 .movie__poster {
@@ -217,6 +237,7 @@ FOOTER
     #fc4863,
     #6ab8c4
   );
+  box-shadow: 0 50vh 0 50vh #6ab8c4;
 }
 
 .footer__container {

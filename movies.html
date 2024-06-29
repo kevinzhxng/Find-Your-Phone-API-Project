@@ -20,8 +20,7 @@
           /></a>
           <ul class="nav__links">
             <li class="nav__link"><a href="index.html">Home</a></li>
-            <li class="nav__link"><a href="#favorites">Movies</a></li>
-            <li class="nav__link"><a href="#">Contact</a></li>
+            <li class="nav__link"><a href="movies.html">Movies</a></li>
           </ul>
         </div>
       </nav>
@@ -35,16 +34,51 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
             </form>
+            <select id="filter" onchange="filterMovies(event)">
+                <option value="" disabled selected>Sort</option>
+                <option value="Latest-Movies" >Latest Movies</option>
+                <option value="Oldest-Movies" >Oldest Movies</option>
+            </select>
             <div class="movies__list">
               <div class="movie">
-                <a class="movie-card__container click"
+                <a class="movie-card__container movie--disappear"
                   ><img
                     class="movie__poster"
                     src="https://m.media-amazon.com/images/M/MV5BZGFiMWFhNDAtMzUyZS00NmQ2LTljNDYtMmZjNTc5MDUxMzViXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_SX300.jpg"
                     alt=""
                 /></a>
-                <h3><b>title</b></h3>
-                <p>date</p>
+                <h3 class="movie--disappear"><b>title</b></h3>
+                <p class="movie--disappear">date</p>
+              </div>
+              <div class="movie">
+                <a class="movie-card__container movie--disappear"
+                  ><img
+                    class="movie__poster"
+                    src="https://m.media-amazon.com/images/M/MV5BZGFiMWFhNDAtMzUyZS00NmQ2LTljNDYtMmZjNTc5MDUxMzViXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_SX300.jpg"
+                    alt=""
+                /></a>
+                <h3 class="movie--disappear"><b>title</b></h3>
+                <p class="movie--disappear">date</p>
+              </div>
+              <div class="movie">
+                <a class="movie-card__container movie--disappear"
+                  ><img
+                    class="movie__poster"
+                    src="https://m.media-amazon.com/images/M/MV5BZGFiMWFhNDAtMzUyZS00NmQ2LTljNDYtMmZjNTc5MDUxMzViXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_SX300.jpg"
+                    alt=""
+                /></a>
+                <h3 class="movie--disappear"><b>title</b></h3>
+                <p class="movie--disappear">date</p>
+              </div>
+              <div class="movie">
+                <a class="movie-card__container movie--disappear"
+                  ><img
+                    class="movie__poster"
+                    src="https://m.media-amazon.com/images/M/MV5BZGFiMWFhNDAtMzUyZS00NmQ2LTljNDYtMmZjNTc5MDUxMzViXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_SX300.jpg"
+                    alt=""
+                /></a>
+                <h3 class="movie--disappear"><b>title</b></h3>
+                <p class="movie--disappear">date</p>
               </div>
             </div>
           </div>

@@ -3,23 +3,48 @@
 
 const form = document.querySelector('form');
 const movieListEl = document.querySelector('.movies__list');
+let movieData = {};
+let query = "";
 
-//GETS TEXT INSIDE THE INPUT
-form.addEventListener('submit', (e)=> {
+form.addEventListener('submit', (e) => {
     e.preventDefault(); //prevents opening new tab
-    let query = form.querySelector('input').value;
+    query = form.querySelector('input').value;
     getMovies(query);
 })
 
-async function getMovies(query) {
-    const movies = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=1e94ff26&s=${query}`)
-    const movieData = await movies.json();
-    
+//my filter function
+function filterMovies(event) {
+    sortMovies(event.target.value) //ONLY JOB IS TO SEND TO SORT FUNCTION
+}
+
+async function sortMovies(filter) {
+    if (filter === "Latest-Movies") {
+        movieData.Search.sort((a, b) => parseInt(b.Year.substring(0, 4)) - parseInt(a.Year.substring(0, 4)));
+    } else if (filter === "Oldest-Movies") {
+        movieData.Search.sort((a, b) => parseInt(a.Year.substring(0, 4)) - parseInt(b.Year.substring(0, 4)));
+    }
+
+    movieListEl.innerHTML = movieData.Search.map((movie) => movieHTML(movie)).join("");
+
+
+}
+
+
+
+async function getMovies() {
+    const movies = await fetch
+        (`https://www.omdbapi.com/?i=tt3896198&apikey=1e94ff26&s=${query}`);
+    movieData = await movies.json();
+
     console.log(movieData)
 
-    movieListEl.innerHTML = movieData.Search.map((movie) => 
-        `<div class="movie click" onclick="showMovieData(${movie.imdbID})">
-            <a class="movie-card__container click"
+    movieListEl.innerHTML = movieData.Search.map((movie) => movieHTML(movie)
+    ).join('');
+}
+
+function movieHTML(movie) {
+    return `<div class="movie"">
+            <a class="movie-card__container"
                 ><img
                 class="movie__poster"
                 src="${movie.Poster}"
@@ -27,12 +52,6 @@ async function getMovies(query) {
             ></a>
             <h3><b>${movie.Title}</b></h3>
             <p>${movie.Year}</p>
-        </div>`
-    ).join('');
+        </div>`;
 }
 
-function showMovieData(id) {
-    localStorage.setItem("id", imdbID)
-    window.location.href = `${window.location.origin}/movie.html`
-    console.log(id)
-}
